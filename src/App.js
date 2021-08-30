@@ -16,10 +16,8 @@ const App = () => {
     await axios
       .get(`${PROXY_API}/https://frontenddev2021.azurewebsites.net/dogs`)
       .then((res) => {
-        if (!res.data) {
-          setLoading(true);
-        }
         setDogs(res.data.dogs);
+        setLoading(true);
       })
       .catch((err) => console.log(err));
   };
